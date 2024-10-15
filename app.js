@@ -9,15 +9,15 @@ Exercise 1 has been completed for you:
 */
 
 const maxOfTwoNumbers = (x, y) => {
-    if (x >= y) {
-      return x;
-    } else {
-      return y;
-    }
+  if (x >= y) {
+    return x;
+  } else {
+    return y;
   }
-  
+}
+
 console.log('Exercise 1 Result:', maxOfTwoNumbers(3, 9));
-  
+
 /*
 Exercise 2: isAdult()
 
@@ -26,12 +26,12 @@ and return 'Adult' if the age is 18 or over and 'Minor' otherwise.
 */
 
 const isAdult = (x) => {
-    if (x >= 21) {
-      return "Adult";
-    } else {
-      return "Minor";
-    }
+  if (x >= 21) {
+    return "Adult";
+  } else {
+    return "Minor";
   }
+}
 
 console.log('Exercise 2 Result:', isAdult(18));
 
@@ -45,27 +45,42 @@ y should not be considered a vowel.
 */
 
 const isCharAVowel = (x) => {
-    if (x === "a" || x === "A") {
-      return true;
-    }
-    if (x === "e" || x === "E") {
-        return true;
-    }
-    if (x === "i" || x === "I") {
-        return true;
-    }
-    if (x === "o" || x === "O") {
-          return true;
-    }
-    if (x === "u" || x === "U") {
-        return true;
-    }
-    else {
-      return false;
-    };
+  if (x === "a" || x === "A") {
+    return true;
   }
+  if (x === "e" || x === "E") {
+    return true;
+  }
+  if (x === "i" || x === "I") {
+    return true;
+  }
+  if (x === "o" || x === "O") {
+    return true;
+  }
+  if (x === "u" || x === "U") {
+    return true;
+  }
+  else {
+    return false;
+  }
+}
 
-console.log('Exercise 3 Result:', isCharAVowel("3"));
+console.log('Exercise 3a Result:', isCharAVowel("3"));
+
+//Avisa's method to run the function
+
+const isCharAVowel2 = (char) => {
+  const vowels = ["a", "e", "i", "o", "u"]
+  for (let i = 0; i < vowels.length; i++) {
+    const vowelChar = vowels[i]
+    if (vowelChar === char) {
+      return true
+    } else {
+      return false
+    }
+  }
+}
+console.log('Exercise 3b Result:', isCharAVowel2("a"));
 
 /*
 Exercise 4: generateEmail()
@@ -104,17 +119,17 @@ and return the largest among them.
 */
 
 const maxOfThree = (num1, num2, num3) => {
-if (num1 > num2 && num1 > num3) {
-  return num1
-};
-if (num2 > num1 && num2 > num3) {
-  return num2
-};
-if (num3 > num1 && num3 > num2) {
-  return num3
-};
-};
-console.log('Exercise 6 Result:', maxOfThree(2, 4, 9));
+  if (num1 > num2 && num1 > num3) {
+    return num1
+  }
+  if (num2 > num1 && num2 > num3) {
+    return num2
+  }
+  if (num3 > num1 && num3 > num2) {
+    return num3
+  }
+}
+console.log('Exercise 6 Result:', maxOfThree(4, 2, 0));
 
 /*
 Exercise 7: calculateTip()
@@ -145,7 +160,7 @@ const convertTemperature = (temp, unit) => {
     return (temp * (9 / 5)) + 32;
   }
   if (unit === "F") {
-    return ((temp - 32) * (5 / 9)) + 32;
+    return ((temp - 32) * (5 / 9));
   }
 }
 
@@ -167,20 +182,23 @@ const basicCalculator = (number1, number2, action) => {
   if (action === "add") {
     let addition = number1 + number2;
     return addition;
-  };
-if (action === "subtract") {
+  }
+  if (action === "subtract") {
     let subtraction = number1 - number2;
     return subtraction;
-  };
-if (action === "divide") {
+  }
+  if (action === "divide") {
     let division = number1 / number2;
     return division;
-  };
-if (action === "multiply") {
+  }
+  if (action === "multiply") {
     let multiplication = number1 * number2;
     return multiplication;
-  };
-};
+  }
+  else {
+    return "Try again";
+  }
+}
 
 console.log('Exercise 9 Result:', basicCalculator(10, 5, "subtract"));
 
@@ -229,14 +247,10 @@ The username should be a combination of the following:
 
 const createUsername = (firstName, lastName) => {
   const firstHalf = firstName.slice(0, 3);
-    
   const secondHalf = lastName.slice(0, 3);
-
   const nameLength = firstName.length + lastName.length;
-
   const username = `${firstHalf}${secondHalf}${nameLength}`;
-
-  return username; 
+    return username;
 }
 
 console.log('Exercise 11 Result:', createUsername("Brady", "Newhard"));
@@ -250,6 +264,6 @@ This function should return the count of arguments passed to it when called.
 
 const numArgs = (...count) => {
   return count.length;
-};
-  
-console.log('Exercise 12 Result:', numArgs(1, 2, 3, 4));
+}
+
+console.log('Exercise 12 Result:', numArgs(10, 30, 19, 79));
