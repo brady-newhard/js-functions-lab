@@ -26,7 +26,7 @@ and return 'Adult' if the age is 18 or over and 'Minor' otherwise.
 */
 
 const isAdult = (x) => {
-  if (x >= 21) {
+  if (x >= 18) {
     return "Adult";
   } else {
     return "Minor";
@@ -65,23 +65,26 @@ const isCharAVowel = (x) => {
   }
 }
 
-console.log('Exercise 3a Result:', isCharAVowel("3"));
+console.log('Exercise 3a Result:', isCharAVowel("i"));
 
 //Avisa's method to run the function
 
 const isCharAVowel2 = (char) => {
+  char = char.toLowerCase();
   const vowels = ["a", "e", "i", "o", "u"]
-  for (let i = 0; i < vowels.length; i++) {
-    const vowelChar = vowels[i]
-    if (vowelChar === char) {
-      return true
-    } else {
-      return false
-    }
-  }
+  return vowels.includes(char);
+  // for (let i = 0; i < vowels.length; i++) {
+  //   const vowelChar = vowels[i]
+  //   if (vowelChar === char) {
+  //     return true
+  //   } else {
+  //     return false
+  //   }
+  // }
 }
-console.log('Exercise 3b Result:', isCharAVowel2("a"));
 
+console.log('Exercise 3b Result:', isCharAVowel2("a"));
+console.log('Exercise 3b Result:', isCharAVowel2("b"));
 /*
 Exercise 4: generateEmail()
 
@@ -129,7 +132,17 @@ const maxOfThree = (num1, num2, num3) => {
     return num3
   }
 }
-console.log('Exercise 6 Result:', maxOfThree(4, 2, 0));
+console.log('Exercise 6a Result:', maxOfThree(4, 2, 0));
+
+//Alo Method
+
+const maxOfThreeB = (num1, num2, num3) => {
+  return Math.max(num1, num2, num3);
+};
+
+console.log('Exercise 6b Result: ', maxOfThreeB(4, 2, 0));
+console.log('Exercise 6b Result: ', maxOfThreeB(5, 10, 5));
+  
 
 /*
 Exercise 7: calculateTip()
@@ -217,13 +230,13 @@ const calculateGrade = (grade) => {
   if (grade >= 90) {
     return "A";
   };
-  if (grade >= 80 & grade < 90) {
+  if (grade >= 80 && grade < 90) {
     return "B";
   };
-  if (grade >= 70 & grade < 80) {
+  if (grade >= 70 && grade < 80) {
     return "C";
   };
-  if (grade >= 60 & grade < 70) {
+  if (grade >= 60 && grade < 70) {
     return "D";
   };
   if (grade < 60) {
